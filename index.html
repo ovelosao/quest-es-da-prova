@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gabarito SIPAER — Prevenção de Acidentes Aeronáuticos</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--ink:#0f1f33;--mute:#5b6b80;--line:#dbe3ee;--acc:#0e7490;--accbg:#e0f4f8;--ok:#15803d;--okbg:#e6f6ec;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1624;--card:#12243a;--ink:#e8eef6;--mute:#90a3ba;--line:#223853;--acc:#22d3ee;--accbg:#0f3447;--ok:#4ade80;--okbg:#12362a}}
+:root[data-theme="dark"]{--bg:#0b1624;--card:#12243a;--ink:#e8eef6;--mute:#90a3ba;--line:#223853;--acc:#22d3ee;--accbg:#0f3447;--ok:#4ade80;--okbg:#12362a}
+*{box-sizing:border-box}
+body{margin:0;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.5}
+.wrap{max-width:820px;margin:0 auto;padding:28px 16px 56px}
+header{text-align:center;margin-bottom:22px}
+h1{font-size:1.6rem;margin:0 0 4px}
+header p{margin:0;color:var(--mute);font-size:.95rem}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:8px 0 12px}
+input{width:100%;padding:12px 14px;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+input:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.count{font-size:.8rem;color:var(--mute);margin-top:6px;text-align:right}
+section{margin-top:22px}
+h2{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);margin:0 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accbg)}
+.item{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:10px;padding:12px 14px;margin-bottom:8px}
+.n{flex:none;width:30px;height:30px;border-radius:50%;background:var(--accbg);color:var(--acc);font-weight:700;font-size:.85rem;display:grid;place-items:center}
+.t{font-size:.82rem;color:var(--mute)}
+.a{font-weight:600;margin-top:2px}
+.a::before{content:"✔ ";color:var(--ok)}
+.hide{display:none}
+footer{text-align:center;color:var(--mute);font-size:.8rem;margin-top:28px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>Gabarito do Simulado SIPAER</h1>
+<p>Prevenção de Acidentes Aeronáuticos · 40 questões do banco</p>
+</header>
+<div class="bar">
+<input id="q" type="search" placeholder="Buscar por tema ou resposta…" aria-label="Buscar por tema ou resposta" aria-controls="m">
+<div class="count" id="c" aria-live="polite"></div>
+</div>
+<main id="m"></main>
+<footer>O simulado sorteia 10 destas 40 questões a cada tentativa.</footer>
+</div>
+<script>
+var G=[
+["Aula 3 · Notificação, Reportes & Cultura Justa",[
+["Onde registrar a Cultura Justa (IS 120-001)","Nos Manuais Operacionais e no MGSO."],
+["RELPREV x RCSV","RELPREV: reporte interno processado no SMS; RCSV: enviado direto ao CENIPA."],
+["Balancing Test","Ponderar se o benefício de revelar o dado supera o dano à cultura de reportes futuros."],
+["Depoimentos espontâneos (CBA)","Fontes restritas, preservadas por sigilo; não podem ser repassadas para punição."],
+["“Cultura de segurança é o que se faz quando ninguém olha”","OACI/ICAO, Doc 9859."],
+["Grupo ICASS","Confidencialidade, Imunidade/Proteção e Não-Punibilidade."]]],
+["Aula 4 · SIPAER, Organismos & SGSO/SMS",[
+["Falhas da alta administração (Reason)","Condições Latentes."],
+["Comitê nacional (NSCA 3-2)","CNPAA."],
+["Elo-SIPAER do DECEA","ASEGCEA."],
+["Sigla SDCPS","Safety Data Collection and Processing Systems."],
+["Practical Drift","Lacuna gradativa entre o desempenho projetado e a prática diária."],
+["Risco 5A (Doc 9859)","Intolerável: paralisação imediata ou defesas urgentes."]]],
+["Aula 5 · Resposta à Emergência Aeroportuária",[
+["START: parada cardiorrespiratória","Preto (Prioridade IV – Óbito)."],
+["Dimensionamento da CAT","Comprimento total e largura máxima de fuselagem da maior aeronave regular."],
+["Quem libera a remoção de aeronaves","Investigador-Encarregado do SIPAER/CENIPA."],
+["FRC (Centro de Acolhimento a Familiares)","Local privado, isolado do terminal e da imprensa."],
+["Mapa de grade externa","Até 8 km (militar) ou 10 km (civil) a partir do ARP."],
+["PLEMAM em aeródromo compartilhado","Comandante da OM desobrigado; observa o PLEM civil integrado."]]],
+["Aula 6 · Protocolos de Investigação (Parte I)",[
+["Divulgação a cada 12 meses (Anexo 13)","Reporte Intermediário (Interim Statement)."],
+["AIRPROX a menos de 500 ft","Incidente Aeronáutico Grave (Risco Crítico)."],
+["Aeronave parada atingida por QTA","Ocorrência de Solo."],
+["Investigação de RPAs","Sim, as certificadas ou de interesse da prevenção."],
+["CVR/FDR e informações espontâneas em acusação","NÃO: protegidos por sigilo (Art. 88-I do CBA)."],
+["Ocorrência Anormal","Sem impacto na segurança; manutenção corretiva; não investigada pelo SIPAER."]]],
+["Aula 7 · Protocolos de Investigação (Parte II)",[
+["Profissional intimado a depor (Art. 93)","Apresentar recusa legal (Art. 207 do CPP) e informar o CENIPA."],
+["Quando emitir o RFS","Acidentes/incidentes graves com PMD ≤ 5.700 kg, incidentes comuns e ocorrências de solo."],
+["Reporte Intermediário (Art. 155)","Atualização publicada a cada 12 meses se a investigação não estiver concluída."],
+["STF na ADI 5667","100% constitucional a proteção das fontes SIPAER."]]],
+["SGSO/SIPAER · SPI, SPT e NADSO",[
+["Dados voláteis e gatilhos (triggers)","Aumentam o Desvio Padrão, gerando limites mais tolerantes."],
+["Meta equivalente ao SPT (IS 119-002D)","MDSO – Metas de Desempenho da Segurança Operacional."],
+["Finalidade do Decreto 9.540/2018","Prevenir acidentes, sem propósito punitivo."],
+["Primeiro NADSO","Cumprimento do cronograma e prazos do Plano de Implantação aceito pela ANAC."],
+["Trinômio SIPAER","O Homem, O Meio e A Máquina."],
+["Indicador reativo (lagging)","Taxa de incidentes/acidentes por 100.000 horas de voo."]]],
+["NSCA 3-15 · Gestão de Risco e Princípios",[
+["Classificações do nível de risco","Alto (vermelho), Médio (amarelo) e Baixo (verde)."],
+["VSVESP obrigatória","Antes ou logo após o início de uma nova operadora, ou após um acidente."],
+["Probabilidade 2 (Improvável) × Severidade B (Perigoso)","Risco Médio (amarelo)."],
+["Tratamento punitivo a erros humanos","Age de forma contrária aos interesses de prevenção."],
+["Etapas do Gerenciamento do Risco","Identificação de Ameaças, Avaliação do Risco e Adoção de Estratégias de Mitigação."],
+["Órgão central do SIPAER","CENIPA."]]]
+];
+var m=document.getElementById("m"),k=0,h="";
+G.forEach(function(g){h+="<section><h2>"+g[0]+"</h2>";g[1].forEach(function(i){k++;h+='<div class="item"><div class="n">'+k+'</div><div><div class="t">'+i[0]+'</div><div class="a">'+i[1]+'</div></div></div>'});h+="</section>"});
+m.innerHTML=h;
+var q=document.getElementById("q"),c=document.getElementById("c");
+function f(){var v=q.value.toLowerCase(),s=0;
+document.querySelectorAll("section").forEach(function(sec){var any=0;
+sec.querySelectorAll(".item").forEach(function(e){var ok=e.textContent.toLowerCase().indexOf(v)>-1;e.classList.toggle("hide",!ok);if(ok){any++;s++}});
+sec.classList.toggle("hide",!any)});
+c.textContent=s+" de 40 questões"}
+q.addEventListener("input",f);f();
+</script>
+</body>
+</html>
+
